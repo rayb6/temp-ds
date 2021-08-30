@@ -1,0 +1,46 @@
+{
+  "auth": {
+    "secret": "cz345Jh9827Lkm",
+    "createSecret": "resaIsTheBest",
+    "dataEndPoint": "data-sync",
+    "sendMailerAccount": "noreply@resawear.com",
+    "sendMailerPass": "_Shoot_refute400",
+    "sendMailerServiceUrl": "http://localhost:8090/#/authAction?action={{action}}&token={{token}}"
+  },
+  "data-sync": {
+    "local": {
+      "type": "mongo",
+      "config": {
+        "path": "../../data/data-sync",
+        "url":"mongodb://localhost:27017/resa"
+      }
+    },
+    "upstream": {
+      "host": "ws://104.196.15.80:5001",
+      "endpoint": "data-sync"
+    }
+  },
+  "storage": {
+    "type": "darkstar",
+    "rootPath": "../../data/data-sync/storage",
+    "config": {
+      "upstream": {
+        "host": "http://104.196.15.80:4001",
+        "endPoint": "storage"
+      }
+    }
+  },
+  "main":{
+    "appHost":"http://localhost:8090"
+  },
+  "notifications": {
+    "folder":"../../data/data-sync/notifications",
+    "sendMailerAccount": "noreply@resawear.com",
+    "sendMailerPass": "_Shoot_refute400",
+    "twilio":{
+       "ssid":"AC731c5eded1f022f77937f940a3a4eee5",
+       "token":"d83380f8332773b17f06ad4a494eebff",
+       "number":"+19283795248"
+    }
+  }
+}
